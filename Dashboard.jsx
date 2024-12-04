@@ -11,6 +11,7 @@ const Dashboard = () => {
       const initialScore = data.score || 0;
       setGamesWon(initialScore);
       localStorage.setItem('gamesWon', initialScore);
+      localStorage.setItem('ini', 1);
     } catch (error) {
       console.error('Error fetching initial score:', error);
     }

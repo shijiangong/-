@@ -61,6 +61,15 @@ const Game2 = () => {
     setLastAccuracy(accuracy.toFixed(2));
     if (result === "win") {
       alert("You have won!");
+      let nowwon = 0
+      // 设置变量到 localStorage
+      if(localStorage.getItem('ini')==1){
+        nowwon = 0
+      }else{
+        nowwon = parseInt(localStorage.getItem('gamesWon'),10);
+      }
+      localStorage.setItem('gamesWon', nowwon+1); // 假设设置初始值为5
+      localStorage.setItem('ini', 0);
     } else {
       alert("You have lost!");
     }
